@@ -1,6 +1,6 @@
 ---
 title: "Testing in sim: Failure discovery with sampling-based techniques "
-excerpt: "Improving the efficiency of sampling based evaluation using data-driven techniques<br/><img src='/images/sim_only_1.png'>"
+excerpt: "Improving the efficiency of sampling based evaluation using data-driven techniques<br/><img src='/images/sim_only_1.png' width="50%">"
 collection: portfolio
 ---
 [Project Website](https://mit-realm.github.io/neural-langevin-website/)
