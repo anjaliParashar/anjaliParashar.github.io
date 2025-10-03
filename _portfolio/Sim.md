@@ -4,6 +4,9 @@ excerpt: "Improving the efficiency of sampling based evaluation using data-drive
 collection: portfolio
 ---
 [Project Website](https://mit-realm.github.io/neural-langevin-website/)
+[Conference Paper/Letters](/publication/ICRA_2025.md)
+[Journal Paper (related project)](/publication/TRO_2025.md)
+
 Sampling methods are inefficient in high-dimensional and low volume exploration. Using a data-driven model to predict failures will only return failures that are observed in training data. Using such models as a pre-processing step, and combining with sampling methods allows generalizability beyond training data due to exploration and mitigates the drawbacks of sampling methods.
 
 ## Neural Projection Operator (NPO) for low volume exploration for finding obstacles for collision
