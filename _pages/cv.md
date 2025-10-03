@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 <div class="cv-download-links">
-  <a href="{{ base_path }}/files/Anjali_Parashar_CV_September_2025..pdf" class="btn btn--primary">Download CV as PDF</a>
+  <a href="{{ base_path }}/files/Anjali_Parashar_CV_September_2025.pdf" class="btn btn--primary">Download CV as PDF</a>
   <!--a href="{{ base_path }}" class="btn btn--inverse">View Markdown CV</a-->
 </div>
 
