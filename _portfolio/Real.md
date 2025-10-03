@@ -4,7 +4,7 @@ excerpt: "Discovering failures that cannot be expressed analytically, in limited
 collection: portfolio
 ---
 [Project Website](https://mit-realm.github.io/contextual-website/)
-[Conference Paper](/publication/CORL_2025.md)
+[Conference Paper](/publication/CORL_2025)
 
 Experts can participate in root-cause analysis of failures by observing failures and providing possible failure modes. 
 <img src='/images/expert.png'>

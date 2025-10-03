@@ -4,7 +4,7 @@ excerpt: "Combining sample-extensive failure search in sim and sample efficient 
 collection: portfolio
 ---
 [Project Website](https://mit-realm.github.io/few-demo/)
-[Workshop Paper, Talk](/publication/NIPS_2024.md)
+[Workshop Paper, Talk](/publication/NIPS_2024)
 
 Sim to real gap leads to failures that cannot be discovered by extensive sampling based techniques alone. Here, we investigate combination of sampling methods and active learning with Gaussian processes (GPs) to learn failure prediction models. 
 <img src='/images/sim_and_real_T.png'>
