@@ -1,6 +1,6 @@
 ---
 title: "Testing with Sim and Real: Failure prediction using both sources"
-excerpt: "Combining sample-extensive failure search in sim and sample efficient exploration in real-world platform for model validation<br/><img src='/images/overview.png'>"
+excerpt: "Combining sample-extensive failure search in sim and sample efficient exploration in real-world platform for model validation<br/><img src='/images/BED_allerton.png'>"
 collection: portfolio
 ---
 [Project Website](https://mit-realm.github.io/few-demo/)
