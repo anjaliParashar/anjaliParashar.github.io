@@ -5,7 +5,7 @@ collection: publications
 category: manuscripts
 permalink: /publication/Science_Direct_2020
 excerpt: 'Design and analysis of a fault tolerant control for an AUtonomous Underwater Vehicle (AUV) with four rotatable thrusters'
-venue: 'Journal of Ocean Engineering, 2020'
+venue: 'Journal of Ocean Engineering
 date: 2020-02-30
 paperurl: 'https://www.sciencedirect.com/science/article/abs/pii/S0029801820300135'
 citation: 'J. Kadiyam, A. Parashar, D. Deskhukh, S. Mohan (2020). &quot;Actuator
