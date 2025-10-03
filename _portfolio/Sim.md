@@ -1,6 +1,6 @@
 ---
-title: "Testing via falsification: Failure discovery with sampling-based techniques "
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/sim_only_1.png'>"
+title: "Testing in sim: Failure discovery with sampling-based techniques "
+excerpt: "Improving the efficiency of sampling based evaluation using data-driven techniques<br/><img src='/images/sim_only_1.png'>"
 collection: portfolio
 ---
 [Project Website][https://mit-realm.github.io/neural-langevin-website/]
@@ -15,7 +15,8 @@ Examples of obstacle locations observed using our method tested on the track
 
 ## VAE for low dimensional latent space exploration to generate failure trajectories
 We use a VAE to learn a nominal low-dimensional representation of trajectories, and sample falsifying trajectories in the learnt stationary latent space to falsify LQR trajectory tracking controller on F1-Tenth. 
-<img src='/images/lqr.png'>
+<img src='/images/vae.png'>
 
 Using sampling allows us to go beyond what we have observed in training data and discover newer failures.
 <img src='/images/sim_only_vae.png'>
+
