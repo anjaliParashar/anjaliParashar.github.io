@@ -1,9 +1,9 @@
 ---
 title: "Testing in real: Sample-efficient failure discovery of contextual failures with Bayesian active learning "
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/sim_only_1.png'>"
+excerpt: "Discovering failures that cannot be expressed analytically, in limited samples, using coverage-driven active learning<br/><img src='/images/BED_corl.png'>"
 collection: portfolio
 ---
-[Project Website][https://mit-realm.github.io/contextual-website/]
+[Project Website](https://mit-realm.github.io/contextual-website/)
 Experts can participate in root-cause analysis of failures by observing failures and providing possible failure modes. 
 <img src='/images/expert.png'>
 
