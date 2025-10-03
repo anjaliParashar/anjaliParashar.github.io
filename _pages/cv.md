@@ -8,10 +8,10 @@ redirect_from:
 ---
 <div class="cv-download-links">
   <a href="{{ base_path }}/files/Anjali_Parashar_CV_September_2025..pdf" class="btn btn--primary">Download CV as PDF</a>
-  <a href="{{ base_path }}" class="btn btn--inverse">View Markdown CV</a>
+  <!--a href="{{ base_path }}" class="btn btn--inverse">View Markdown CV</a-->
 </div>
 
-
+<!-- 
 {% include base_path %}
 
 Education
@@ -34,4 +34,4 @@ Publications
   
 Academic Services
 ======
-* Served as reviewer for RA-L, NeuS, CoRL
+* Served as reviewer for RA-L, NeuS, CoRL -->
