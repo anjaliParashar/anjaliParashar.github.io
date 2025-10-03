@@ -3,8 +3,19 @@ title: "Testing via falsification: Failure discovery with sampling-based techniq
 excerpt: "Short description of portfolio item number 1<br/><img src='/images/sim_only_1.png'>"
 collection: portfolio
 ---
+[Project Website][https://mit-realm.github.io/neural-langevin-website/]
+Sampling methods are inefficient in high-dimensional and low volume exploration. Using a data-driven model to predict failures will only return failures that are observed in training data. Using such models as a pre-processing step, and combining with sampling methods allows generalizability beyond training data due to exploration and mitigates the drawbacks of sampling methods.
 
-We explore the idea of using learning based techniques for improving the efficiency of sampling methods for failure discovery. Using a data-driven model to predict failures will only return failures that are observed in training data. Using such models as a pre-processing step, and combining with sampling methods allows generalizability beyond training data due to exploration. 
+## Neural Projection Operator (NPO) for low volume exploration for finding obstacles for collision
+We consider falsification of MPPI by placing obstacles on Autorally racetrack for collisions. The track is a region of low volume, but the boundary for the track can be learnt easily using synthetically generated data. We use a NPO to project samples within the track, and apply 2nd order Langevin to generate obstacles for failure. 
+<img src='/images/npo.png'>
 
+Examples of obstacle locations observed using our method tested on the track
+<img src='/images/autorally.png'>
 
+## VAE for low dimensional latent space exploration to generate failure trajectories
+We use a VAE to learn a nominal low-dimensional representation of trajectories, and sample falsifying trajectories in the learnt stationary latent space to falsify LQR trajectory tracking controller on F1-Tenth. 
+<img src='/images/lqr.png'>
+
+Using sampling allows us to go beyond what we have observed in training data and discover newer failures.
 <img src='/images/sim_only_vae.png'>
