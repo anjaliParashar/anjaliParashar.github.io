@@ -20,38 +20,7 @@
   --evaluate:  #4070C0;
   --improve:   #C85A38;
   --purple:    #7C5CBF;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg:       #141210;
-    --bg-2:     #1D1B18;
-    --fg:       #EDE9E1;
-    --fg-2:     #A09890;
-    --fg-3:     #6A6258;
-    --border:   #2E2B24;
-    --card-bg:  #1D1B18;
-    --nav-bg:   rgba(20,18,16,0.93);
-    --discover: #45BBA6;
-    --evaluate: #6090D8;
-    --improve:  #E07055;
-    --purple:   #9B7DE0;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg:       #141210;
-  --bg-2:     #1D1B18;
-  --fg:       #EDE9E1;
-  --fg-2:     #A09890;
-  --fg-3:     #6A6258;
-  --border:   #2E2B24;
-  --card-bg:  #1D1B18;
-  --nav-bg:   rgba(20,18,16,0.93);
-  --discover: #45BBA6;
-  --evaluate: #6090D8;
-  --improve:  #E07055;
-  --purple:   #9B7DE0;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -87,7 +56,7 @@ body {
 .pub-entry { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
 .pub-venue-badge {
   flex-shrink: 0;
-  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
+  font-size: 0.86rem; font-weight: 600; letter-spacing: 0.06em;
   text-transform: uppercase; padding: 2px 7px; border-radius: 3px;
   white-space: nowrap;
 }
@@ -96,7 +65,7 @@ body {
 .venue-corl    { background: rgba(47,158,138,0.12); color: var(--discover); }
 .venue-journal { background: rgba(200,90,56,0.10); color: var(--improve); }
 .venue-conf    { background: rgba(90,85,73,0.10); color: var(--fg-2); }
-.pub-title { font-size: 1.02rem; line-height: 1.55; color: var(--fg-2); }
+.pub-title { font-size: 1.18rem; line-height: 1.55; color: var(--fg-2); }
 .pub-title a { color: var(--evaluate); }
 .pub-me { color: var(--fg); font-weight: 500; }
 
@@ -152,10 +121,14 @@ nav {
 .hero {
   max-width: 1360px;
   margin: 0 auto;
-  padding-top: 72px;
-  padding-bottom: 48px;
+  padding-top: 28px;
+  padding-bottom: 28px;
   padding-left: max(20px, env(safe-area-inset-left, 0px));
   padding-right: max(20px, env(safe-area-inset-right, 0px));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 40px;
+  align-items: center;
 }
 .hero-text {}
 .hero-eyebrow {
@@ -167,23 +140,37 @@ nav {
 }
 .hero-text h1 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+  font-size: clamp(2.1rem, 3.4vw, 3.1rem);
   font-weight: 500;
-  line-height: 1.14;
+  line-height: 1.12;
   text-wrap: balance;
   letter-spacing: -0.01em;
-  margin-bottom: 22px;
+  margin-bottom: 14px;
 }
 .hero-text h1 em {
   font-style: italic;
   color: var(--evaluate);
 }
 .hero-tagline {
-  font-size: 1.15rem;
+  font-size: 1.28rem;
   color: var(--fg-2);
-  line-height: 1.75;
-  max-width: 540px;
-  margin-bottom: 30px;
+  line-height: 1.55;
+  max-width: none;
+  margin-bottom: 14px;
+}
+.hero-seeking {
+  font-size: 22px;
+  color: var(--fg);
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+.hero-photo {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center 22%;
+  border-radius: 8px;
+  display: block;
 }
 .hero-btns {
   display: flex;
@@ -263,8 +250,8 @@ nav {
 .framework-inner {
   max-width: 1360px;
   margin: 0 auto;
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 36px;
+  padding-bottom: 28px;
   padding-left: max(20px, env(safe-area-inset-left, 0px));
   padding-right: max(20px, env(safe-area-inset-right, 0px));
 }
@@ -411,7 +398,7 @@ nav {
   gap: 6px;
 }
 .work-chip {
-  font-size: 0.73rem;
+  font-size: 0.95rem;
   font-weight: 500;
   padding: 5px 12px;
   border-radius: 100px;
@@ -464,7 +451,7 @@ nav {
   flex-wrap: wrap;
 }
 .foundations-label {
-  font-size: 0.68rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -476,13 +463,13 @@ nav {
   gap: 0;
   flex-wrap: wrap;
   color: var(--fg-2);
-  font-size: 0.82rem;
+  font-size: 1.12rem;
 }
-.foundations-items span { padding: 0 8px; border-left: 1px solid var(--border); }
+.foundations-items span { padding: 0 10px; border-left: 1px solid var(--border); }
 .foundations-items span:first-child { padding-left: 0; border-left: none; }
 .foundations-apps {
   margin-left: auto;
-  font-size: 0.75rem;
+  font-size: 1.05rem;
   color: var(--fg-3);
   font-style: italic;
 }
@@ -512,7 +499,7 @@ nav {
 }
 .diag-col-hd { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .diag-col-num {
-  font-size: 0.6rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -524,14 +511,18 @@ nav {
   line-height: 1.05;
 }
 .diag-col-sub {
-  font-size: 0.7rem;
-  color: var(--fg-3);
+  font-size: 19px;
+  color: var(--fg-2);
   letter-spacing: 0.01em;
-  margin-top: 2px;
-  line-height: 1.5;
-  max-width: 180px;
+  margin-top: 6px;
+  line-height: 1.45;
+  max-width: 36ch;
 }
-.diag-visual { width: 100%; max-width: 196px; }
+.diag-visual { width: 100%; max-width: none; }
+.diag-visual svg text {
+  font-size: 8px;
+  opacity: 1;
+}
 .diag-works-label {
   font-size: 0.6rem;
   font-weight: 700;
@@ -776,8 +767,8 @@ nav {
 .main-section {
   max-width: 1360px;
   margin: 0 auto;
-  padding-top: 72px;
-  padding-bottom: 72px;
+  padding-top: 28px;
+  padding-bottom: 48px;
   padding-left: max(20px, env(safe-area-inset-left, 0px));
   padding-right: max(20px, env(safe-area-inset-right, 0px));
 }
@@ -840,16 +831,28 @@ nav {
 }
 
 /* about card */
+.about-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.about-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding-top: 48px;
+  padding-bottom: 64px;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
 .about-card {
-  position: sticky;
-  top: calc(env(safe-area-inset-top, 0px) + 68px);
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 16px;
+  position: static;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
+  max-width: 860px;
 }
 .about-photo {
   width: 100%;
@@ -874,7 +877,7 @@ nav {
   margin-top: 0;
 }
 .about-bio {
-  font-size: 1.02rem;
+  font-size: 1.12rem;
   color: var(--fg-2);
   line-height: 1.75;
 }
@@ -884,8 +887,9 @@ nav {
 }
 .about-links {
   display: flex;
-  flex-direction: column;
-  gap: 9px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 .about-link {
   display: flex;
@@ -931,9 +935,10 @@ footer {
 @media (max-width: 820px) {
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
+  .hero-photo { height: 220px; max-width: 240px; }
   .hero-profile {
     flex-direction: row;
     gap: 18px;
@@ -975,6 +980,7 @@ footer {
       <li><a href="#research">Research</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="files/Anjali_Parashar_CV_September_2025.pdf" target="_blank" rel="noopener">CV</a></li>
     </ul>
   </div>
@@ -988,8 +994,8 @@ footer {
     <p class="hero-tagline">
       I develop principled methods to discover consequential failures in autonomous systems, evaluate behavior against human values, and guide system improvement and perform repairs.
     </p>
-    <p class="hero-tagline" style="margin-top:10px; font-size:0.9rem; color:var(--fg-3);">
-      <em>Seeking full-time research and industry roles starting May/June 2027.</em>
+    <p class="hero-seeking">
+      Seeking full-time research and industry roles starting May/June 2027.
     </p>
     <div class="hero-btns">
       <a class="btn btn-dark" href="#publications">Publications</a>
@@ -997,7 +1003,7 @@ footer {
       <a class="btn btn-ghost" href="mailto:anjalip@mit.edu">Email</a>
     </div>
   </div>
-
+  <img class="hero-photo" src="images/profile.jpeg" alt="Anjali Parashar">
 </section>
 
 <!-- RESEARCH FRAMEWORK -->
@@ -1006,8 +1012,6 @@ footer {
     <p class="section-eyebrow">Research Framework</p>
     <h2 class="section-heading framework-title">Discover consequential failures. Learn from limited evidence. Improve system behavior.</h2>
 
-    <div class="framework-split">
-      <div class="framework-main">
     <div class="research-diagram">
       <!-- arc connector -->
       <div class="diag-arc-row">
@@ -1051,12 +1055,6 @@ footer {
               <path d="M148 12 L190 12 L190 60 L148 60 Z" fill="rgba(200,90,56,0.07)" stroke="rgba(200,90,56,0.25)" stroke-width="0.8" stroke-dasharray="3 2"/>
               <text x="169" y="38" font-size="7" fill="var(--improve)" text-anchor="middle" font-family="system-ui" opacity=".7">Failure</text>
               <text x="169" y="47" font-size="7" fill="var(--improve)" text-anchor="middle" font-family="system-ui" opacity=".7">region</text>
-              <!-- Loop arrow (circular) top right of diagram -->
-              <path d="M 170 100 A 16 16 0 1 1 169 101" stroke="var(--discover)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".75"/>
-              <polygon points="169,101 162,96 175,94" fill="var(--discover)" opacity=".75"/>
-              <!-- Loop labels -->
-              <text x="157" y="87" font-size="6.5" fill="var(--discover)" font-family="system-ui" text-anchor="middle" opacity=".75">Test</text>
-              <text x="184" y="105" font-size="6.5" fill="var(--discover)" font-family="system-ui" text-anchor="start" opacity=".75">Update</text>
               <!-- x-axis label -->
               <text x="100" y="136" font-size="7" fill="var(--fg-3)" text-anchor="middle" font-family="system-ui">Parameter space</text>
               <!-- Surrogate model label -->
@@ -1066,9 +1064,9 @@ footer {
           <div>
             <div class="diag-works-label">Representative work — click to explore</div>
             <div class="work-chips">
-              <a class="work-chip" href="https://scholar.google.com/citations?user=XMr6ploAAAAJ" target="_blank" rel="noopener">Adaptive testing (NeurIPS '26)</a>
-              <a class="work-chip" href="https://ieeexplore.ieee.org/abstract/document/10844960" target="_blank" rel="noopener">Bayesian inference (RA-L '24)</a>
-              <a class="work-chip" href="https://scholar.google.com/citations?user=XMr6ploAAAAJ" target="_blank" rel="noopener">Contextual failures (CoRL '25)</a>
+              <a class="work-chip" href="https://arxiv.org/abs/2410.09249" target="_blank" rel="noopener">Failure prediction from limited demonstrations (NeurIPS BDU 2025, Allerton 2025)</a>
+              <a class="work-chip" href="https://neurips.cc/Downloads/2026" target="_blank" rel="noopener">Adaptive testing (NeurIPS '26)</a>
+              <a class="work-chip" href="https://openreview.net/pdf/0c4bbc4ecee323522e632879cc6fa741268a8c13.pdf" target="_blank" rel="noopener">Contextual failures (CoRL '25)</a>
               <a class="work-chip" href="https://arxiv.org/abs/2608.13719" target="_blank" rel="noopener">Paired-system coverage (CoRL '26)</a>
               <a class="work-chip" href="https://arxiv.org/abs/2606.31131" target="_blank" rel="noopener">Scenario generation (NeuS '26)</a>
             </div>
@@ -1085,48 +1083,48 @@ footer {
             <span class="diag-col-sub">Test behavior against contextual goals and stakeholder values</span>
           </div>
           <div class="diag-visual">
-<svg viewBox="0 0 200 148" fill="none" width="100%" aria-hidden="true">
+<svg viewBox="0 0 200 156" fill="none" width="100%" aria-hidden="true">
               <!-- Left stakeholder (developer / efficiency) -->
-              <circle cx="30" cy="28" r="11" fill="rgba(64,112,192,0.10)" stroke="var(--evaluate)" stroke-width="1.2"/>
-              <line x1="30" y1="39" x2="30" y2="60" stroke="var(--evaluate)" stroke-width="1.2" opacity=".7"/>
-              <line x1="30" y1="44" x2="18" y2="54" stroke="var(--evaluate)" stroke-width="1.2" opacity=".7"/>
-              <line x1="30" y1="44" x2="42" y2="54" stroke="var(--evaluate)" stroke-width="1.2" opacity=".7"/>
-              <line x1="30" y1="60" x2="22" y2="72" stroke="var(--evaluate)" stroke-width="1.2" opacity=".7"/>
-              <line x1="30" y1="60" x2="38" y2="72" stroke="var(--evaluate)" stroke-width="1.2" opacity=".7"/>
+              <circle cx="18" cy="28" r="11" fill="rgba(64,112,192,0.10)" stroke="var(--evaluate)" stroke-width="1.2"/>
+              <line x1="18" y1="39" x2="18" y2="60" stroke="var(--evaluate)" stroke-width="1.2" opacity=".7"/>
+              <line x1="18" y1="44" x2="8" y2="54" stroke="var(--evaluate)" stroke-width="1.2" opacity=".7"/>
+              <line x1="18" y1="44" x2="28" y2="54" stroke="var(--evaluate)" stroke-width="1.2" opacity=".7"/>
+              <line x1="18" y1="60" x2="12" y2="72" stroke="var(--evaluate)" stroke-width="1.2" opacity=".7"/>
+              <line x1="18" y1="60" x2="26" y2="72" stroke="var(--evaluate)" stroke-width="1.2" opacity=".7"/>
               <!-- Left speech bubble -->
-              <path d="M44 12 L90 12 L90 40 L52 40 L44 46 L44 40 Z" fill="rgba(64,112,192,0.08)" stroke="var(--evaluate)" stroke-width="0.85"/>
-              <text x="67" y="24" font-size="6.5" fill="var(--evaluate)" text-anchor="middle" font-family="system-ui" font-weight="500">Deploy fast,</text>
-              <text x="67" y="33" font-size="6.5" fill="var(--evaluate)" text-anchor="middle" font-family="system-ui">maximize speed</text>
+              <path d="M32 2 L96 2 L96 44 L48 44 L40 52 L40 44 Z" fill="rgba(64,112,192,0.08)" stroke="var(--evaluate)" stroke-width="0.85"/>
+              <text x="64" y="18" font-size="8" fill="var(--evaluate)" text-anchor="middle" font-family="system-ui" font-weight="500">Deploy fast,</text>
+              <text x="64" y="32" font-size="8" fill="var(--evaluate)" text-anchor="middle" font-family="system-ui">maximize speed</text>
               <!-- Right stakeholder (regulator / safety) -->
-              <circle cx="170" cy="28" r="11" fill="rgba(200,90,56,0.10)" stroke="var(--improve)" stroke-width="1.2"/>
-              <line x1="170" y1="39" x2="170" y2="60" stroke="var(--improve)" stroke-width="1.2" opacity=".7"/>
-              <line x1="170" y1="44" x2="158" y2="54" stroke="var(--improve)" stroke-width="1.2" opacity=".7"/>
-              <line x1="170" y1="44" x2="182" y2="54" stroke="var(--improve)" stroke-width="1.2" opacity=".7"/>
-              <line x1="170" y1="60" x2="162" y2="72" stroke="var(--improve)" stroke-width="1.2" opacity=".7"/>
-              <line x1="170" y1="60" x2="178" y2="72" stroke="var(--improve)" stroke-width="1.2" opacity=".7"/>
+              <circle cx="182" cy="28" r="11" fill="rgba(200,90,56,0.10)" stroke="var(--improve)" stroke-width="1.2"/>
+              <line x1="182" y1="39" x2="182" y2="60" stroke="var(--improve)" stroke-width="1.2" opacity=".7"/>
+              <line x1="182" y1="44" x2="172" y2="54" stroke="var(--improve)" stroke-width="1.2" opacity=".7"/>
+              <line x1="182" y1="44" x2="192" y2="54" stroke="var(--improve)" stroke-width="1.2" opacity=".7"/>
+              <line x1="182" y1="60" x2="174" y2="72" stroke="var(--improve)" stroke-width="1.2" opacity=".7"/>
+              <line x1="182" y1="60" x2="190" y2="72" stroke="var(--improve)" stroke-width="1.2" opacity=".7"/>
               <!-- Right speech bubble -->
-              <path d="M156 12 L110 12 L110 40 L148 40 L156 46 L156 40 Z" fill="rgba(200,90,56,0.08)" stroke="var(--improve)" stroke-width="0.85"/>
-              <text x="133" y="24" font-size="6.5" fill="var(--improve)" text-anchor="middle" font-family="system-ui" font-weight="500">Zero harm,</text>
-              <text x="133" y="33" font-size="6.5" fill="var(--improve)" text-anchor="middle" font-family="system-ui">safety first</text>
+              <path d="M168 2 L104 2 L104 44 L152 44 L160 52 L160 44 Z" fill="rgba(200,90,56,0.08)" stroke="var(--improve)" stroke-width="0.85"/>
+              <text x="136" y="18" font-size="8" fill="var(--improve)" text-anchor="middle" font-family="system-ui" font-weight="500">Zero harm,</text>
+              <text x="136" y="32" font-size="8" fill="var(--improve)" text-anchor="middle" font-family="system-ui">safety first</text>
               <!-- Conflict arrows -->
               <line x1="72" y1="82" x2="58" y2="82" stroke="var(--evaluate)" stroke-width="1.5" marker-end="url(#ae)" opacity=".6" stroke-linecap="round"/>
               <line x1="128" y1="82" x2="142" y2="82" stroke="var(--improve)" stroke-width="1.5" opacity=".6" stroke-linecap="round"/>
               <!-- SEED-SET mediator box -->
-              <rect x="73" y="70" width="54" height="26" rx="5" fill="rgba(64,112,192,0.08)" stroke="var(--evaluate)" stroke-width="1.1"/>
-              <text x="100" y="81" font-size="7.5" fill="var(--evaluate)" text-anchor="middle" font-family="system-ui" font-weight="600">SEED-SET</text>
-              <text x="100" y="91" font-size="6" fill="var(--fg-2)" text-anchor="middle" font-family="system-ui">ethical evaluation</text>
+              <rect x="52" y="66" width="96" height="32" rx="5" fill="rgba(64,112,192,0.08)" stroke="var(--evaluate)" stroke-width="1.1"/>
+              <text x="100" y="80" font-size="8" fill="var(--evaluate)" text-anchor="middle" font-family="system-ui" font-weight="600">SEED-SET</text>
+              <text x="100" y="91" font-size="7.5" fill="var(--fg-2)" text-anchor="middle" font-family="system-ui">ethical evaluation</text>
               <!-- Scenario examples -->
-              <rect x="14" y="102" width="172" height="40" rx="4" fill="rgba(64,112,192,0.05)" stroke="var(--border)" stroke-width="0.8"/>
-              <text x="100" y="116" font-size="7" fill="var(--evaluate)" text-anchor="middle" font-family="system-ui" font-weight="500">Scenario: AEB system</text>
-              <text x="100" y="128" font-size="6.5" fill="var(--fg-2)" text-anchor="middle" font-family="system-ui">Pedestrian crosses at 40m · 60 km/h — Brake?</text>
+              <rect x="6" y="102" width="188" height="48" rx="4" fill="rgba(64,112,192,0.05)" stroke="var(--border)" stroke-width="0.8"/>
+              <text x="100" y="116" font-size="8" fill="var(--evaluate)" text-anchor="middle" font-family="system-ui" font-weight="500">Scenario: AEB system</text>
+              <text x="100" y="129" font-size="7.5" fill="var(--fg-2)" text-anchor="middle" font-family="system-ui">Pedestrian crosses at 40m</text>
+              <text x="100" y="142" font-size="7.5" fill="var(--fg-2)" text-anchor="middle" font-family="system-ui">60 km/h — Brake?</text>
             </svg>
           </div>
           <div>
             <div class="diag-works-label">Representative work — click to explore</div>
             <div class="work-chips">
               <a class="work-chip" href="https://arxiv.org/abs/2603.01630" target="_blank" rel="noopener">SEED-SET (ICLR '26)</a>
-              <a class="work-chip" href="https://scholar.google.com/citations?user=XMr6ploAAAAJ" target="_blank" rel="noopener">Contextual failures (CoRL '25)</a>
-              <a class="work-chip" href="https://arxiv.org/abs/2410.09249" target="_blank" rel="noopener">Failure prediction from limited demonstrations (NeurIPS BDU 2025, Allerton 2025)</a>
+              <a class="work-chip" href="https://openreview.net/pdf/0c4bbc4ecee323522e632879cc6fa741268a8c13.pdf" target="_blank" rel="noopener">Contextual failures (CoRL '25)</a>
             </div>
           </div>
         </div>
@@ -1182,7 +1180,8 @@ footer {
           <div>
             <div class="diag-works-label">Representative work — click to explore</div>
             <div class="work-chips">
-              <a class="work-chip" href="https://ieeexplore.ieee.org/document/10824956" target="_blank" rel="noopener">RADIUM (T-RO '25)</a>
+              <a class="work-chip" href="https://ieeexplore.ieee.org/document/10669181" target="_blank" rel="noopener">Learning-based Bayesian inference (RA-L 2024, ICRA 2025)</a>
+              <a class="work-chip" href="https://ieeexplore.ieee.org/document/10925872" target="_blank" rel="noopener">RADIUM (T-RO '25)</a>
               <a class="work-chip" href="https://arxiv.org/abs/2602.06104" target="_blank" rel="noopener">Pragmatic Curiosity</a>
               <a class="work-chip" href="https://arxiv.org/abs/2602.06029" target="_blank" rel="noopener">Curiosity is Knowledge</a>
             </div>
@@ -1200,23 +1199,6 @@ footer {
         <span>Optimization</span>
       </div>
       <span class="foundations-apps">Applications: robotics · autonomous driving · AI decision-making</span>
-    </div>
-      </div>
-      <aside class="about-card" id="about">
-        <img class="about-photo" src="images/profile.jpeg" alt="Anjali Parashar">
-        <div class="about-id">
-          <div class="about-name">Anjali Parashar</div>
-          <div class="about-role">she/her · PhD Candidate<br>MIT MechE &amp; AeroAstro, REALM Lab<br>Advisor: Prof. Chuchu Fan</div>
-        </div>
-        <p class="about-bio">My research develops principled methods for testing and evaluating autonomous systems. This involves efficiently finding diverse scenarios where they fail and quantifying behavior relative to human values through scenario generation. I leverage several Bayesian inference tools, such as Bayesian Experiment Design for user-in-the-loop design of scenarios and MCMC sampling combined with optimization for targeted exploration.</p>
-        <p class="about-bio">Previously, I finished my Master's thesis on optimization and control with Dr. Anuradha Annaswamy (2021–23), and Bachelor's thesis on fault-tolerant control of underwater vehicles under Dr. Santhakumar Mohan (2020).</p>
-        <div class="about-divider"></div>
-        <div class="about-links">
-          <a class="about-link" href="files/Anjali_Parashar_CV_September_2025.pdf" target="_blank" rel="noopener">CV</a>
-          <a class="about-link" href="https://scholar.google.com/citations?user=XMr6ploAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
-          <a class="about-link" href="mailto:anjalip@mit.edu">anjalip@mit.edu</a>
-        </div>
-      </aside>
     </div>
   </div>
 </section>
@@ -1308,7 +1290,7 @@ footer {
         <span class="news-date">Sep 2025</span>
         <div>
           <div class="news-tag tag-paper">Paper</div>
-          <p class="news-text"><strong>Cost-aware Discovery of Contextual Failures</strong> accepted at <strong>CoRL 2025</strong>. <a href="https://scholar.google.com/citations?user=XMr6ploAAAAJ" target="_blank" rel="noopener">PDF</a></p>
+          <p class="news-text"><strong>Cost-aware Discovery of Contextual Failures</strong> accepted at <strong>CoRL 2025</strong>. <a href="https://openreview.net/pdf/0c4bbc4ecee323522e632879cc6fa741268a8c13.pdf" target="_blank" rel="noopener">PDF</a></p>
         </div>
       </div>
       <div class="news-item">
@@ -1375,7 +1357,7 @@ footer {
         </li>
         <li class="pub-entry">
           <span class="pub-venue-badge venue-iclr">ICLR 2026</span>
-          <span class="pub-title"><span class="pub-me">A. Parashar</span>, Y. Li, E. Y. Yu, F. Chen, J. Neidhoefer, D. Upadhyay, C. Fan. "SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing." <a href="https://arxiv.org/abs/2603.01630" target="_blank" rel="noopener">[PDF]</a></span>
+          <span class="pub-title"><span class="pub-me">A. Parashar</span>, Y. Li, E. Y. Yu, F. Chen, J. Neidhoefer, D. Upadhyay, C. Fan. "SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing." <a href="https://arxiv.org/abs/2603.01630" target="_blank" rel="noopener">[arXiv]</a> <a href="https://anjaliparashar.github.io/seed-site/" target="_blank" rel="noopener">[Website]</a></span>
         </li>
         <li class="pub-entry">
           <span class="pub-venue-badge venue-journal">TMLR 2026</span>
@@ -1393,7 +1375,7 @@ footer {
       <ol class="pub-list">
         <li class="pub-entry">
           <span class="pub-venue-badge venue-corl">CoRL 2025</span>
-          <span class="pub-title"><span class="pub-me">A. Parashar</span>, J. Zhang, Y. Li, C. Fan. "Cost-aware Discovery of Contextual Failures using Bayesian Active Learning." <a href="https://scholar.google.com/citations?user=XMr6ploAAAAJ" target="_blank" rel="noopener">[PDF]</a></span>
+          <span class="pub-title"><span class="pub-me">A. Parashar</span>, J. Zhang, Y. Li, C. Fan. "Cost-aware Discovery of Contextual Failures using Bayesian Active Learning." <a href="https://openreview.net/pdf/0c4bbc4ecee323522e632879cc6fa741268a8c13.pdf" target="_blank" rel="noopener">[PDF]</a></span>
         </li>
         <li class="pub-entry">
           <span class="pub-venue-badge venue-conf">Allerton 2025 · NeurIPS BDU Workshop 2024</span>
@@ -1401,15 +1383,15 @@ footer {
         </li>
         <li class="pub-entry">
           <span class="pub-venue-badge venue-journal">IEEE T-RO 2025</span>
-          <span class="pub-title">C. Dawson, <span class="pub-me">A. Parashar</span>, C. Fan. "RADIUM: Predicting and Repairing End-to-End Robot Failures using Gradient-Accelerated Sampling."</span>
+          <span class="pub-title">C. Dawson, <span class="pub-me">A. Parashar</span>, C. Fan. "RADIUM: Predicting and Repairing End-to-End Robot Failures using Gradient-Accelerated Sampling." <a href="https://ieeexplore.ieee.org/document/10925872" target="_blank" rel="noopener">[PDF]</a></span>
         </li>
         <li class="pub-entry">
           <span class="pub-venue-badge venue-journal">TMLR 2025</span>
-          <span class="pub-title">T.E. Gibson, S. Acharya, <span class="pub-me">A. Parashar</span>, J.E. Gaudio, A.M. Annaswamy. "On the stability of gradient descent with second order dynamics for time-varying cost functions." <em>ICLR 2026 J2C certification.</em> <a href="https://scholar.google.com/citations?user=XMr6ploAAAAJ" target="_blank" rel="noopener">[PDF]</a></span>
+          <span class="pub-title">T.E. Gibson, S. Acharya, <span class="pub-me">A. Parashar</span>, J.E. Gaudio, A.M. Annaswamy. "On the stability of gradient descent with second order dynamics for time-varying cost functions." <em>ICLR 2026 J2C certification.</em> <a href="https://openreview.net/pdf?id=HlzjI2fn2T" target="_blank" rel="noopener">[PDF]</a></span>
         </li>
         <li class="pub-entry">
           <span class="pub-venue-badge venue-journal">IEEE RA-L 2024</span>
-          <span class="pub-title"><span class="pub-me">A. Parashar</span>, J. Yin, C. Dawson, P. Tsiotras, C. Fan. "Learning-based Bayesian Inference for Testing of Autonomous Systems." <em>Presented at ICRA 2025.</em> <a href="https://ieeexplore.ieee.org/abstract/document/10844960" target="_blank" rel="noopener">[Website]</a></span>
+          <span class="pub-title"><span class="pub-me">A. Parashar</span>, J. Yin, C. Dawson, P. Tsiotras, C. Fan. "Learning-based Bayesian Inference for Testing of Autonomous Systems." <em>Presented at ICRA 2025.</em> <a href="https://ieeexplore.ieee.org/document/10669181" target="_blank" rel="noopener">[RA-L]</a> <a href="https://mit-realm.github.io/neural-langevin-website/" target="_blank" rel="noopener">[Website]</a></span>
         </li>
         <li class="pub-entry">
           <span class="pub-venue-badge venue-journal">Field Robotics 2024</span>
@@ -1437,6 +1419,27 @@ footer {
     </div>
 
     <p style="margin-top:16px;font-size:0.82rem;color:var(--fg-3)">Full list on <a href="https://scholar.google.com/citations?user=XMr6ploAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="about-inner">
+    <p class="section-eyebrow">About</p>
+    <div class="about-card">
+      <div class="about-id">
+        <div class="about-name">Anjali Parashar</div>
+        <div class="about-role">she/her · PhD Candidate<br>MIT MechE &amp; AeroAstro, REALM Lab<br>Advisor: Prof. Chuchu Fan</div>
+      </div>
+      <p class="about-bio">My research develops principled methods for testing and evaluating autonomous systems. This involves efficiently finding diverse scenarios where they fail and quantifying behavior relative to human values through scenario generation. I leverage several Bayesian inference tools, such as Bayesian Experiment Design for user-in-the-loop design of scenarios and MCMC sampling combined with optimization for targeted exploration.</p>
+      <p class="about-bio">Previously, I finished my Master's thesis on optimization and control with Dr. Anuradha Annaswamy (2021–23), and Bachelor's thesis on fault-tolerant control of underwater vehicles under Dr. Santhakumar Mohan (2020).</p>
+      <div class="about-divider"></div>
+      <div class="about-links">
+        <a class="about-link" href="files/Anjali_Parashar_CV_September_2025.pdf" target="_blank" rel="noopener">CV</a>
+        <a class="about-link" href="https://scholar.google.com/citations?user=XMr6ploAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="about-link" href="mailto:anjalip@mit.edu">anjalip@mit.edu</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1504,7 +1507,7 @@ const WORKS = {
       'Demonstrated on autonomous driving and robotic manipulation benchmarks',
     ],
     figures: [],
-    links: { 'Paper (IEEE RA-L)': 'https://ieeexplore.ieee.org/abstract/document/10844960', 'Google Scholar': 'https://scholar.google.com/citations?user=XMr6ploAAAAJ' },
+    links: { 'Paper (IEEE RA-L)': 'https://ieeexplore.ieee.org/document/10669181', 'Google Scholar': 'https://scholar.google.com/citations?user=XMr6ploAAAAJ&hl=en' },
   },
   'neurips-2026': {
     pillar: 'discover',
@@ -1519,7 +1522,7 @@ const WORKS = {
       'Demonstrated on LLM-assisted decision making in medical and autonomous systems domains',
     ],
     figures: [],
-    links: { 'Google Scholar': 'https://scholar.google.com/citations?user=XMr6ploAAAAJ' },
+    links: { 'Google Scholar': 'https://scholar.google.com/citations?user=XMr6ploAAAAJ&hl=en' },
   },
   'contextual-failures': {
     pillar: 'discover',
@@ -1534,7 +1537,7 @@ const WORKS = {
       'Validated on air traffic control and autonomous emergency braking systems',
     ],
     figures: [],
-    links: { 'Paper': 'https://scholar.google.com/citations?user=XMr6ploAAAAJ' },
+    links: { 'Paper': 'https://openreview.net/pdf/0c4bbc4ecee323522e632879cc6fa741268a8c13.pdf' },
   },
   'paired-coverage': {
     pillar: 'discover',
@@ -1624,7 +1627,7 @@ const WORKS = {
       'Demonstrated on contact-rich manipulation and legged locomotion tasks',
     ],
     figures: [],
-    links: { 'Paper (IEEE T-RO)': 'https://ieeexplore.ieee.org/document/10824956', 'Google Scholar': 'https://scholar.google.com/citations?user=XMr6ploAAAAJ' },
+    links: { 'Paper (IEEE T-RO)': 'https://ieeexplore.ieee.org/document/10925872', 'Google Scholar': 'https://scholar.google.com/citations?user=XMr6ploAAAAJ&hl=en' },
   },
   'pragmatic-curiosity': {
     pillar: 'improve',
